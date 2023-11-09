@@ -74,18 +74,22 @@ function boldPassage(word, text) {
     return null;
   }
   const p = document.createElement("p");
-  let textArray = text.split(" ");
-  textArray.forEach(function (element, index) {
-    if (word === element) {
-      const bold = document.createElement("strong");
-      bold.append(element);
+  let words = text.split(/\b/);
+  words.forEach(function (element, index) {
+    const bold = document.createElement("strong");
+    if (word.toLowerCase() === element.toLowerCase()) {
+      bold.innerText = element;
       p.append(bold);
     } else {
       p.append(element);
     }
-    if (index !== (textArray.length - 1)) {
-      p.append(" ");
-    }
   });
   return p;
 }
+
+
+
+
+
+
+
