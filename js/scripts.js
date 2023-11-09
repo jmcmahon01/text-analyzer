@@ -87,6 +87,8 @@ function boldPassage(word, text) {
   return p;
 }
 
+window.addEventListener
+
 
 
 
