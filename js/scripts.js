@@ -63,11 +63,21 @@ function handleFormSubmission() {
   } else {
     document.querySelector("div#bolded-passage").innerText = null;
   }
+  document.getElementById("reset-btn").style.display = "inline-block";
+}
+function handleReset() {
+  document.getElementById("word-counter").reset();
+  document.getElementById("total-count").innerText = "";
+  document.getElementById("selected-count").innerText = "";
+  document.getElementById("bolded-passage").innerText = "";
+  document.getElementById("reset-btn").style.display = "none";
 }
 
 window.addEventListener("load", function () {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
+  document.getElementById("reset-btn").addEventListener("click", handleReset);
 });
+
 
 function boldPassage(word, text) {
   if (isEmpty(word) || isEmpty(text)) {
@@ -85,9 +95,10 @@ function boldPassage(word, text) {
     }
   });
   return p;
+  resetBtn.removeAttribute("class");
 }
 
-window.addEventListener
+
 
 
 
